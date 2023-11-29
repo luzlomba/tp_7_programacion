@@ -37,7 +37,7 @@ const cuenta4 = {
     importe: 150.000,
     tipoMoneda: "euro", // "euro", // "dolar", // "peso"
     plazoFijo: [{
-    estado: "activo", // "inactivo", // "activo"
+    estado: "inactivo", // "inactivo", // "activo"
     importe: 100.000,
     fechaCreacion: "2022-12-18",
     plazo: 45, // en dias
@@ -112,4 +112,66 @@ const cuenta10 = {
     }
 
 const cuentas = [cuenta1, cuenta2, cuenta3, cuenta4, cuenta5, cuenta6, cuenta7, cuenta8, cuenta9, cuenta10]
+
+
+// a) Realiza una función que devuelva todos las cuentas con plazos fijos activos a partir de una
+// fecha dada.
+
+cuentasActivas = []
+cuentasActivasPorFecha = []
+function pfActivoPorFecha (listadoCuentas , fecha) {
+for (let index = 0; index < listadoCuentas.length; index++) {
+    if (listadoCuentas[index].plazoFijo[0].estado === "activo"){
+    cuentasActivas.push (listadoCuentas[index]);}
+}
+for (let index = 0; index < cuentasActivas.length; index++) {
+    if (cuentasActivas[index].plazoFijo[0].fechaCreacion >= fecha){
+    cuentasActivasPorFecha.push (cuentasActivas[index]);
+}
+}
+return cuentasActivasPorFecha
+}
+console.log (pfActivoPorFecha(cuentas , "2023-01-01"))
+
+// b) Realiza una función que devuelva todos las cuentas con plazos fijos con plazo mayor a 30
+// días.
+
+cuentasPorPlazo = []
+function pfPlazoMayor (listadoCuentas , dias) {
+for (let index = 0; index < listadoCuentas.length; index++) {
+    if (listadoCuentas[index].plazoFijo[0].plazo > dias){
+        cuentasPorPlazo.push (listadoCuentas[index]);}
+}
+return cuentasPorPlazo
+}
+console.log (pfPlazoMayor (cuentas , 30))
+
+// c) Realiza una función que devuelva todos las cuentas del tipo corriente.
+
+cuentasCorrientes = []
+function pfPorTipoDeCuenta (listadoCuentas , tipoDeCuenta) {
+for (let index = 0; index < listadoCuentas.length; index++) {
+    if (listadoCuentas[index].tipo === tipoDeCuenta) {
+        cuentasCorrientes.push (listadoCuentas[index])
+    }
+}
+return cuentasCorrientes
+}
+console.log (pfPorTipoDeCuenta (cuentas , "corriente"))
+
+// d) Realiza una función que devuelva todos las cuentas de un tipo de moneda especificado.
+
+cuentasPorMoneda = []
+function pfPorMoneda (listadoCuentas , Moneda) {
+    for (let index = 0; index < listadoCuentas.length; index++) {
+        if (listadoCuentas[index].tipoMoneda === Moneda) {
+            cuentasPorMoneda.push (listadoCuentas[index])
+        }
+    }
+    return cuentasPorMoneda
+}
+console.log (pfPorMoneda (cuentas , "euro"))
+
+// e) Realiza una función que permita descontar un importe dado (mantenimiento de cuenta) a
+// todas las cuentas en la lista.
 
