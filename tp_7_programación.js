@@ -203,3 +203,20 @@ function beneficioExclusivo (listadoCuentas , incremento) {
 console.log (beneficioExclusivo (cuentas , 10))
 
 // g) Realiza una función que permita cargar una nueva cuenta al final de la lista.
+
+function cargarNuevaCuenta (listadoCuentas) {
+    const cuentaNueva = {
+        tipo: datoTipo = prompt ("Ingresar tipo de cuenta: corriente o ahorro"),
+        importe: datoImporte = parseInt (prompt ("Ingresar importe de la cuenta:")),
+        tipoMoneda: datoTipoDeMoneda = prompt ("Ingresar el tipo de moneda: peso, euro, dolar"),
+        plazoFijo: [{
+            estado: datoEstado = datoTipo = prompt ("Ingresar estado de la cuenta: activo o inactivo"),
+            importe: datoImportePf = parseInt (prompt ("Ingresar importe del Plazo Fijo:")),
+            fechaCreacion: datoFechaCreacion = prompt ("Ingresar fecha de creación en el formato año-mes-día"),
+            plazo: parseInt (prompt ("Ingresar días del Plazo Fijo:")),
+        }],
+    }
+    listadoCuentas.push (cuentaNueva)
+    return listadoCuentas
+}
+console.log (cargarNuevaCuenta (cuentas))
