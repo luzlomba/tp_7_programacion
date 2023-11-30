@@ -203,7 +203,7 @@ function beneficioExclusivo (listadoCuentas , incremento) {
 console.log (beneficioExclusivo (cuentas , 10))
 
 // g) Realiza una función que permita cargar una nueva cuenta al final de la lista.
-
+/*
 function cargarNuevaCuenta (listadoCuentas) {
     const cuentaNueva = {
         tipo: datoTipo = prompt ("Ingresar tipo de cuenta: corriente o ahorro"),
@@ -220,3 +220,20 @@ function cargarNuevaCuenta (listadoCuentas) {
     return listadoCuentas
 }
 console.log (cargarNuevaCuenta (cuentas))
+*/
+
+// h) Realiza una función que permita ordenar la lista según el importe de cada cuenta.
+
+function OrdenarImporteDeMenorAMayor (listadoCuentas){
+    const cuentasOrdenadas = listadoCuentas.sort((a, b) => a.importe - b.importe) //releer metodo SORT
+        return cuentasOrdenadas
+    }
+console.log (OrdenarImporteDeMenorAMayor (cuentas))
+
+// i) Realiza una función que permita ordenar la lista según el vencimientos de los plazos fijos. 
+
+function OrdenarVencimientoDeMenorAMayor (listadoCuentas){
+    const cuentasOrdenadasVencimiento = listadoCuentas.plazoFijo.sort((a, b) => nweDate (a.fechaCreacion) - newDate (b.fechaCreacion)) //releer metodo SORT
+        return cuentasOrdenadasVencimiento
+    }
+console.log (OrdenarVencimientoDeMenorAMayor (cuentas))
