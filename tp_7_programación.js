@@ -257,11 +257,62 @@ console.log(cuentas);
 
 console.log ("EJERCICIO N°2")
 // 2) Dada una lista con venta de pasajes con la siguiente información:
-pasaje = {
+pasaje1 = {
 categoria: "primera", // "segunda"
-precio: 100,
+precio: 300,
 descuento: 10,
 estado: "disponible", // "vendido"
 }
 
+pasaje2 = {
+categoria: "segunda", // "segunda"
+precio: 200,
+descuento: 20,
+estado: "vendido", // "vendido"
+}
+
+pasaje3 = {
+    categoria: "segunda", // "segunda"
+    precio: 100,
+    descuento: 10,
+    estado: "disponible", // "vendido"
+    }
+
+pasaje4 = {
+    categoria: "primera", // "segunda"
+    precio: 500,
+    descuento: 10,
+    estado: "vendido", // "vendido"
+}
+
+pasajes = [pasaje1, pasaje2, pasaje3, pasaje4]
+
 // a) Realiza una función que devuelva la cantidad de pasajes disponibles.
+
+disponibles = 0
+function pasajesDisponibles (listadoPasajes) {
+    for (let index = 0; index < listadoPasajes.length; index++) {
+        if (listadoPasajes[index].estado == "disponible") {
+        disponibles++
+        }
+    }
+    return disponibles
+}
+pasajesDisponibles (pasajes)
+console.log (`La cantidad de Pasajes disponibles es ${disponibles}`)
+
+//b) Realiza una función que ordene los pasajes por precio de mayor a menor. ((IMPORTANTE))
+
+listaPasajesDeMayorAMenor = []
+function ordenarDeMayorAMenor (listadoPasajes){
+listaPasajesDeMayorAMenor.push (listadoPasajes.sort((a, b) => b.precio - a.precio))
+return listaPasajesDeMayorAMenor
+}
+console.log (ordenarDeMayorAMenor(pasajes))
+
+//c) Realiza una función que devuelva todos los pasajes con descuento mayor a un valor dado.
+
+pasajesOrdenados = []
+function descuentoMayorMenor (listadoPasajes, descuento){
+    if ()
+}
