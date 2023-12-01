@@ -230,10 +230,37 @@ function OrdenarImporteDeMenorAMayor (listadoCuentas){
     }
 console.log (OrdenarImporteDeMenorAMayor (cuentas))
 
-// i) Realiza una función que permita ordenar la lista según el vencimientos de los plazos fijos. 
+// i) Realiza una función que permita ordenar la lista según el vencimientos de los plazos fijos. // RELEER!!!
 
-function OrdenarVencimientoDeMenorAMayor (listadoCuentas){
-    const cuentasOrdenadasVencimiento = listadoCuentas.plazoFijo.sort((a, b) => nweDate (a.fechaCreacion) - newDate (b.fechaCreacion)) //releer metodo SORT
-        return cuentasOrdenadasVencimiento
+function ordenarPorFechaVencimiento(cuentas) {
+  for (let i = 0; i < cuentas.length - 1; i++) {
+    for (let j = i + 1; j < cuentas.length; j++) {
+      const fechaA = new Date(cuentas[i].plazoFijo[0].fechaCreacion);
+      const fechaB = new Date(cuentas[j].plazoFijo[0].fechaCreacion);
+
+      // Compara las fechas
+      if (fechaA > fechaB) {
+        // Intercambia las posiciones si la fechaA es mayor que fechaB
+        const temp = cuentas[i];
+        cuentas[i] = cuentas[j];
+        cuentas[j] = temp;
+      }
     }
-console.log (OrdenarVencimientoDeMenorAMayor (cuentas))
+  }
+}
+
+// Llama a la función de ordenación
+ordenarPorFechaVencimiento(cuentas);
+
+// Imprimir la lista ordenada
+console.log(cuentas);
+
+// 2) Dada una lista con venta de pasajes con la siguiente información:
+pasaje = {
+categoria: "primera", // "segunda"
+precio: 100,
+descuento: 10,
+estado: "disponible", // "vendido"
+}
+
+// a) Realiza una función que devuelva la cantidad de pasajes disponibles.
