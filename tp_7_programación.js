@@ -1,3 +1,5 @@
+console.log ("EJERCICIO N°1")
+// 1) Dada una lista con cuentas bancarias con la siguiente información:
 const cuenta1 = {
     tipo: "corriente", // "ahorro"
     importe: 200000,
@@ -9,7 +11,6 @@ const cuenta1 = {
     plazo: 30, // en dias
     }],
     }
-
 const cuenta2 = {
     tipo: "ahorro",
     importe: 300000,
@@ -54,7 +55,6 @@ const cuenta5 = {
     plazo: 90, // en dias
     }],
     }
-
 const cuenta6 = {
     tipo: "corriente", // "ahorro", "corriente"
     importe: 20000,
@@ -255,6 +255,7 @@ ordenarPorFechaVencimiento(cuentas);
 // Imprimir la lista ordenada
 console.log(cuentas);
 
+console.log ("EJERCICIO N°2")
 // 2) Dada una lista con venta de pasajes con la siguiente información:
 pasaje = {
 categoria: "primera", // "segunda"
