@@ -325,6 +325,7 @@ console.log (descuentoMayorMenor (pasajes, 20))
 
 //d) Realiza una función que devuelva todos (los pasajes de una categoria especificada)--> lo modifique yo al enunciado
 // las cuentas de un tipo de moneda especificado.
+
 listaPasajesCategoria = []
 function pasajesPorCategoria (listadoPasajes , categoriaElegida){
     for (let index = 0; index < listadoPasajes.length; index++) {
@@ -337,12 +338,13 @@ function pasajesPorCategoria (listadoPasajes , categoriaElegida){
 console.log (pasajesPorCategoria (pasajes, "segunda"))
 
 //e) Realiza una función que permita agregar un descuento a un pasaje y aplicarlo al importe.
-pasajesConDescuento = []
+
 function aplicarDescuento (listadoPasajes, pasajeBonificado, montoDescontar){
     for (let index = 0; index < listadoPasajes.length; index++) {
-        if (listadoPasajes[index] = pasajeBonificado){
-            listadoPasajes[index].
-        }
-        
+        if (listadoPasajes[index] === pasajeBonificado){
+            listadoPasajes[index].precio = listadoPasajes[index].precio - montoDescontar
+        }   
     }
+    return listadoPasajes
 }
+console.log (aplicarDescuento (pasajes, pasaje4, 50))
