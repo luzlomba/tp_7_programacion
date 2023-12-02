@@ -260,7 +260,7 @@ console.log ("EJERCICIO N°2")
 pasaje1 = {
 categoria: "primera", // "segunda"
 precio: 300,
-descuento: 10,
+descuento: 30,
 estado: "disponible", // "vendido"
 }
 
@@ -313,6 +313,36 @@ console.log (ordenarDeMayorAMenor(pasajes))
 //c) Realiza una función que devuelva todos los pasajes con descuento mayor a un valor dado.
 
 pasajesOrdenados = []
-function descuentoMayorMenor (listadoPasajes, descuento){
-    if ()
+function descuentoMayorMenor (listadoPasajes, descuentoUsuario){
+    for (let index = 0; index < listadoPasajes.length; index++) {
+        if (listadoPasajes[index].descuento >= descuentoUsuario){
+        pasajesOrdenados.push (listadoPasajes[index])
+        }
+    }
+    return pasajesOrdenados
+}
+console.log (descuentoMayorMenor (pasajes, 20))
+
+//d) Realiza una función que devuelva todos (los pasajes de una categoria especificada)--> lo modifique yo al enunciado
+// las cuentas de un tipo de moneda especificado.
+listaPasajesCategoria = []
+function pasajesPorCategoria (listadoPasajes , categoriaElegida){
+    for (let index = 0; index < listadoPasajes.length; index++) {
+        if (listadoPasajes[index].categoria === categoriaElegida){
+            listaPasajesCategoria.push (listadoPasajes[index])
+        }       
+    }
+    return listaPasajesCategoria
+}
+console.log (pasajesPorCategoria (pasajes, "segunda"))
+
+//e) Realiza una función que permita agregar un descuento a un pasaje y aplicarlo al importe.
+pasajesConDescuento = []
+function aplicarDescuento (listadoPasajes, pasajeBonificado, montoDescontar){
+    for (let index = 0; index < listadoPasajes.length; index++) {
+        if (listadoPasajes[index] = pasajeBonificado){
+            listadoPasajes[index].
+        }
+        
+    }
 }
