@@ -348,3 +348,96 @@ function aplicarDescuento (listadoPasajes, pasajeBonificado, montoDescontar){
     return listadoPasajes
 }
 console.log (aplicarDescuento (pasajes, pasaje4, 50))
+
+// f) Realiza una función que permita buscar pasajes de una cierta categoría y que estén
+// disponibles.
+
+buscarPasajes = []
+function pasajesDisponiblesPorCategoria (listadoPasajes, categoriaElegida, estadoElegido){
+    for (let index = 0; index < listadoPasajes.length; index++) {
+        if (listadoPasajes[index].categoria === categoriaElegida && listadoPasajes[index].estado === estadoElegido){
+            buscarPasajes.push (listadoPasajes[index])
+        }
+    }
+    return buscarPasajes
+}
+console.log (pasajesDisponiblesPorCategoria (pasajes, "primera", "disponible"))
+
+console.log ("EJERCICIO N°3")
+
+// 3) Dada una lista con las butacas de un cine con la siguiente información:
+
+butaca1 = {
+    numero: 1,
+    fila: "A",
+    estado: "libre", // "ocupada"
+    ubicacion: "izquierda" // "derecha" // "centro"
+}
+
+butaca2 = {
+    numero: 10,
+    fila: "B",
+    estado: "libre", // "ocupada"
+    ubicacion: "derecha" // "derecha" // "centro"
+    }
+
+butaca3 = {
+    numero: 23,
+    fila: "C",
+    estado: "libre", // "ocupada"
+    ubicacion: "centro" // "derecha" // "centro"
+    }
+
+butaca4 = {
+    numero: 18,
+    fila: "D",
+    estado: "ocupada", // "ocupada"
+    ubicacion: "izquierda" // "derecha" // "centro"
+    }
+
+butacas = [butaca1, butaca2, butaca3, butaca4]
+
+//a) Realiza una función que devuelva las butacas libres.
+
+butacasLibres = []
+function buscarButacasLibres (listadoButacas, estadoButaca){
+    for (let index = 0; index < listadoButacas.length; index++) {
+        if (listadoButacas[index].estado === estadoButaca){
+            butacasLibres.push (listadoButacas[index])
+        }
+    }
+    return butacasLibres
+}
+console.log (buscarButacasLibres (butacas, "libre"))
+
+//b) Realiza una función que devuelva las butacas libres dada una cierta ubicación.
+
+butacasElegidas = []
+function seleccionarButacas (listadoButacas, estadoButaca, ubicacionButaca){
+    for (let index = 0; index < listadoButacas.length; index++) {
+        if (listadoButacas[index].estado === estadoButaca && listadoButacas[index].ubicacion === ubicacionButaca)
+        butacasElegidas.push (listadoButacas[index])
+    }
+    return butacasElegidas
+}
+console.log (seleccionarButacas (butacas, "libre", "izquierda"))
+
+//c) Realiza una función que devuelva la cantidad de butacas ocupadas.
+
+butacasOcupadas = 0
+function buscarButacasOcupadas (listadoButacas, estadoButaca){
+    for (let index = 0; index < listadoButacas.length; index++) {
+        if (listadoButacas[index].estado === estadoButaca) {
+        butacasOcupadas ++
+        }
+    }
+    return butacasOcupadas
+}
+
+buscarButacasOcupadas (butacas, "ocupada")
+console.log (`La Cantidad de Butacas Ocupadas son: ${butacasOcupadas}`)
+
+//d) Realiza una función que indique la distribución de las butacas ocupadas, es decir, en caso
+// que halla la misma cantidad de butacas en cada ubicación, la distribución será
+// “homogénea”, de lo contrario será según donde se encuentre mayor cantidad.
+
