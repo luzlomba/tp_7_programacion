@@ -441,8 +441,6 @@ console.log (`La Cantidad de Butacas Ocupadas son: ${butacasOcupadas}`)
 // que halla la misma cantidad de butacas en cada ubicación, la distribución será
 // “homogénea”, de lo contrario será según donde se encuentre mayor cantidad. //REVEER
 
-
-
 function distribucionDeButacas (listadoButacas){
 ocupadasIzquierda = 0
 ocupadasDerecha = 0
@@ -473,8 +471,9 @@ distribucion = ""
 
 console.log (`La distribución de las butacas es: ${distribucionDeButacas (butacas)}`)
 
+console.log ("EJERCICIO N°4")
 // 4) Dada una lista con las vehículos de una agencia automotriz con la siguiente información:
-auto = {
+auto1 = {
     marca: "Ford",
     modelo: "Focus",
     color: "Blanco",
@@ -483,5 +482,125 @@ auto = {
     km: 0,
     estado: "disponible", // "vendido"
     }
+    
+auto2 = {
+    marca: "Fiat",
+    modelo: "Palio",
+    color: "Gris",
+    anio: 2016,
+    precio: 100000,
+    km: 70000,
+    estado: "disponible", // "vendido"
+    }
+
+auto3 = {
+    marca: "Ford",
+    modelo: "Ka",
+    color: "Gris",
+    anio: 2009,
+    precio: 85000,
+    km: 120000,
+    estado: "vendido", // "vendido"
+    }
+
+auto4 = {
+    marca: "Ford",
+    modelo: "Ka",
+    color: "Rojo",
+    anio: 2003,
+    precio: 75000,
+    km: 230000,
+    estado: "vendido", // "vendido"
+    }
+
+autos = [auto1, auto2, auto3, auto4]
 
 // a) Realiza una función que devuelva los autos dado su marca y modelo.
+
+detalleAutoBuscado = []
+function buscarAutoModeloMarca (listadoDeAutos, marcaElegida, modeloElegido){
+    for (let index = 0; index < listadoDeAutos.length; index++) {
+        if (listadoDeAutos[index].marca === marcaElegida && listadoDeAutos[index].modelo === modeloElegido) {
+            detalleAutoBuscado.push (listadoDeAutos[index])
+        }
+    }
+    return detalleAutoBuscado
+}
+
+console.log ( buscarAutoModeloMarca (autos, "Ford", "Ka"))
+
+// b) Realiza una función que devuelva los autos según un año de fabricación.
+autoPorAnio = []
+function buscarAutoAnio (listadoDeAutos, anioElegido){
+    for (let index = 0; index < listadoDeAutos.length; index++) {
+        if (listadoDeAutos[index].anio === anioElegido){
+            autoPorAnio.push (listadoDeAutos[index])
+        }
+    }
+    return autoPorAnio
+}
+console.log (buscarAutoAnio (autos, 2009))
+
+// c) Realiza una función que devuelva los autos según un kilometraje.
+autoPorKm = []
+function buscarAutoKm (listadoDeAutos, kmElegido){
+    for (let index = 0; index < listadoDeAutos.length; index++) {
+        if (listadoDeAutos[index].km === kmElegido){
+            autoPorKm.push (listadoDeAutos[index])
+        }
+    }
+    return autoPorKm
+}
+console.log (buscarAutoKm (autos, 70000))
+
+//d) Idem por precio, estado, etc. //NO LO VOY A HACER ES MAS DE LO MISMO
+
+//e) Como realizarías una única función que liste los vehículos según diferentes parámetros?.
+
+//f) Realiza una función que permita ingresar nuevos vehículos.
+
+console.log ("EJERCICIO N°5")
+
+//5) Dada una lista de aulas de una escuela con la siguiente información:
+aula1 = {
+    capacidad: 50,
+    nombre: "Aula 1",
+    horarios: [
+    { hora: "08:00", estado: "ocupada", materia: "Matematicas" },
+    { hora: "09:00", estado: "ocupada", materia: "Matematicas" },
+    { hora: "10:00", estado: "ocupada", materia: "Fisica" },
+    { hora: "11:00", estado: "ocupada", materia: "Informatica" },
+    { hora: "12:00", estado: "disponible", materia: null },
+    ]
+    }
+aula2 = {
+    capacidad: 10,
+    nombre: "Aula 2",
+    horarios: [
+    { hora: "10:00", estado: "ocupada", materia: "Matematicas" },
+    { hora: "13:00", estado: "disponible", materia: null },
+    { hora: "16:00", estado: "ocupada", materia: "Fisica" },
+    ]
+    }
+aula3 = {
+    capacidad: 30,
+    nombre: "Aula 3",
+    horarios: [
+    { hora: "08:00", estado: "ocupada", materia: "Ingles" },
+    { hora: "09:00", estado: "ocupada", materia: "Italiano" },
+    { hora: "10:00", estado: "ocupada", materia: "Frances" },
+    { hora: "12:00", estado: "disponible", materia: null },
+    ]
+    }
+
+// a) Realiza una función que dada un número de alumnos devuelva las aulas disponibles y en
+// que rango horario.
+
+busquedaDisponibles = []
+function aulasDisponiblesPorCant (listadoAulas, cantidadAlumnos){
+    for (let index = 0; index < listadoAulas.length; index++) {
+        if (listadoAulas[index].capacidad >= cantidadAlumnos){
+            
+        }
+    }
+}
