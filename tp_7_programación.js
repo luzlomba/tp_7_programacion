@@ -377,21 +377,21 @@ butaca1 = {
 butaca2 = {
     numero: 10,
     fila: "B",
-    estado: "libre", // "ocupada"
-    ubicacion: "derecha" // "derecha" // "centro"
+    estado: "ocupada", // "ocupada"
+    ubicacion: "centro" // "derecha" // "centro"
     }
 
 butaca3 = {
     numero: 23,
     fila: "C",
-    estado: "libre", // "ocupada"
+    estado: "ocupada", // "ocupada"
     ubicacion: "centro" // "derecha" // "centro"
     }
 
 butaca4 = {
     numero: 18,
     fila: "D",
-    estado: "ocupada", // "ocupada"
+    estado: "libre", // "ocupada"
     ubicacion: "izquierda" // "derecha" // "centro"
     }
 
@@ -439,5 +439,49 @@ console.log (`La Cantidad de Butacas Ocupadas son: ${butacasOcupadas}`)
 
 //d) Realiza una función que indique la distribución de las butacas ocupadas, es decir, en caso
 // que halla la misma cantidad de butacas en cada ubicación, la distribución será
-// “homogénea”, de lo contrario será según donde se encuentre mayor cantidad.
+// “homogénea”, de lo contrario será según donde se encuentre mayor cantidad. //REVEER
 
+
+
+function distribucionDeButacas (listadoButacas){
+ocupadasIzquierda = 0
+ocupadasDerecha = 0
+ocupadasCentro = 0
+distribucion = ""
+    for (let index = 0; index < listadoButacas.length; index++) {
+        if (listadoButacas[index].estado === "ocupada") {
+            if (listadoButacas[index].ubicacion === "derecha"){
+                ocupadasDerecha ++
+            } else if (listadoButacas[index].ubicacion === "centro"){
+                ocupadasCentro++
+            } else if (listadoButacas[index].ubicacion === "izquierda"){
+                ocupadasIzquierda ++
+            }
+        }
+    }
+    if (ocupadasIzquierda === ocupadasDerecha && ocupadasIzquierda === ocupadasCentro && ocupadasDerecha === ocupadasCentro){
+        distribucion = "homogenea"
+    } else if (ocupadasIzquierda > ocupadasDerecha && ocupadasIzquierda > ocupadasCentro){
+        distribucion = "izquierda"
+    } else if (ocupadasDerecha > ocupadasIzquierda && ocupadasDerecha > ocupadasCentro){
+        distribucion = "derecha"
+    } else if (ocupadasCentro > ocupadasDerecha && ocupadasCentro > ocupadasIzquierda){
+        distribucion = "central"
+    }
+    return distribucion
+}
+
+console.log (`La distribución de las butacas es: ${distribucionDeButacas (butacas)}`)
+
+// 4) Dada una lista con las vehículos de una agencia automotriz con la siguiente información:
+auto = {
+    marca: "Ford",
+    modelo: "Focus",
+    color: "Blanco",
+    anio: 2019,
+    precio: 150000,
+    km: 0,
+    estado: "disponible", // "vendido"
+    }
+
+// a) Realiza una función que devuelva los autos dado su marca y modelo.
